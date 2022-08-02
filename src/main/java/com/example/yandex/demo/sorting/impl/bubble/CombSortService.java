@@ -1,4 +1,4 @@
-package com.example.yandex.demo.sorting.impl;
+package com.example.yandex.demo.sorting.impl.bubble;
 
 import com.example.yandex.demo.sorting.Sorted;
 import org.springframework.stereotype.Service;

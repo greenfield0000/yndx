@@ -1,4 +1,4 @@
-package com.example.yandex.demo.sorting.impl;
+package com.example.yandex.demo.sorting.impl.bubble;
 
 import com.example.yandex.demo.sorting.Sorted;
 import org.springframework.stereotype.Service;
@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
  * Сортировка пузырьком
  * <p>
  * сложность алгоритма O(n^2)
- *
- *  Описание алгоритма: Бежит слева направо, сравнивает все числа с первым, меняет каждый раз, когда первое число больше,
- *  как дошло до конца, берет второе число, дальше берет третье, так до конца.
+ * <p>
+ * Описание алгоритма: Бежит слева направо, сравнивает все числа с первым, меняет каждый раз, когда первое число больше,
+ * как дошло до конца, берет второе число, дальше берет третье, так до конца.
  *
  * @author Ivanov Roman
  */
