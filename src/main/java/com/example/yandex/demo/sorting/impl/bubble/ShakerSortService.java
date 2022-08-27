@@ -23,22 +23,24 @@ public class ShakerSortService implements Sorted {
         do {
             for (int i = 0; i < right; i++) {
                 if (list[i] > list[i + 1]) {
-                    final int swap = list[i];
-                    list[i] = list[i + 1];
-                    list[i + 1] = swap;
+                    swap(list, i, i + 1);
                 }
             }
             right--;
             for (int k = right; k > left; k--) {
                 if (list[k - 1] > list[k]) {
-                    final int swap = list[k];
-                    list[k] = list[k - 1];
-                    list[k - 1] = swap;
+                    swap(list, k, k - 1);
                 }
             }
             left++;
         } while (left < right);
         return list;
+    }
+
+    private void swap(int[] list, int i, int i2) {
+        final int swap = list[i];
+        list[i] = list[i2];
+        list[i2] = swap;
     }
 
 }
