@@ -1,8 +1,7 @@
-package com.example.yandex.demo.aop.resource;
+package com.example.yandex.demo.resource;
 
-import com.example.yandex.demo.aop.aspects.logger.PointCutLogger;
 import com.example.yandex.demo.aop.exception.CustopAopException;
-import com.example.yandex.demo.aop.service.AopService;
+import com.example.yandex.demo.service.AopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

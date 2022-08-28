@@ -1,4 +1,4 @@
-package com.example.yandex.demo.aop.service;
+package com.example.yandex.demo.service;
 
 import com.example.yandex.demo.aop.aspects.logger.PointCutLogger;
 import com.example.yandex.demo.aop.exception.CustopAopException;

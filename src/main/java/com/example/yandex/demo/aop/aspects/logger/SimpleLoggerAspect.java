@@ -16,27 +16,27 @@ public class SimpleLoggerAspect {
 
     private final Logger logger = Logger.getLogger(String.valueOf(this.getClass()));
 
-    @Before(value = "execution(* com.example.yandex.demo.aop.service.AopService.*(..))")
+    @Before(value = "execution(* com.example.yandex.demo.service.AopService.*(..))")
     public void before() {
         logger.log(Level.INFO, "Call before");
     }
 
-    @After(value = "execution(* com.example.yandex.demo.aop.service.AopService.*(..))")
+    @After(value = "execution(* com.example.yandex.demo.service.AopService.*(..))")
     public void after() {
         logger.log(Level.INFO, "Call after");
     }
 
-    @AfterReturning(value = "execution(* com.example.yandex.demo.aop.service.AopService.*(..))")
+    @AfterReturning(value = "execution(* com.example.yandex.demo.service.AopService.*(..))")
     public void afterReturning() {
         logger.log(Level.INFO, "Call afterReturning");
     }
 
-    @AfterThrowing(value = "execution(* com.example.yandex.demo.aop.service.AopService.*(..))")
+    @AfterThrowing(value = "execution(* com.example.yandex.demo.service.AopService.*(..))")
     public void afterThrowing() {
         logger.log(Level.INFO, "Call afterThrowing");
     }
 
-    @Around(value = "execution(* com.example.yandex.demo.aop.service.AopService.*(..))")
+    @Around(value = "execution(* com.example.yandex.demo.service.AopService.*(..))")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.log(Level.INFO, "Start around");
         final long start = System.currentTimeMillis();
