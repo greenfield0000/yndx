@@ -1,6 +1,7 @@
 package com.example.yandex.demo.resource;
 
 import com.example.yandex.demo.resource.pojo.NormalizePathRequest;
+import com.example.yandex.demo.resource.pojo.RleRequest;
 import com.example.yandex.demo.service.CodeWarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,9 +28,9 @@ public class CodeWarsResource {
         );
     }
 
-    @GetMapping(path = "/rle")
-    public String stringRLE() {
-        return "rle";
+    @PostMapping(path = "/rle")
+    public String stringRLE(@RequestBody RleRequest rleRequest) {
+        return codeWarsService.stringRLE(rleRequest.getS4Rle());
     }
 
 }

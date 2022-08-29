@@ -2,6 +2,8 @@ package com.example.yandex.demo.service;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 import java.util.stream.Collectors;
 
@@ -52,5 +54,33 @@ public class CodeWarsService {
             i++;
         }
         return pathStack.stream().map(it -> "/" + it).collect(Collectors.joining());
+    }
+
+    /**
+     * AAA -> 3A
+     * A -> A
+     * ABBACD -> A2BACD
+     * ABBACD -> A2BACD
+     * ABBACDDDDD -> A2BAC5D
+     * ABBACDDDDDAA -> A2BAC5D2A
+     *
+     * @param srcString
+     * @return
+     */
+    public String stringRLE(String srcString) {
+        if (srcString.isEmpty()) {
+            return "";
+        }
+
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < srcString.length(); i++) {
+            int count = 1;
+            while (i + 1 < srcString.length() && srcString.charAt(i) == srcString.charAt(i + 1)) {
+                count++;
+                i++;
+            }
+            res.append(count != 1 ? count + String.valueOf(srcString.charAt(i)) : srcString.charAt(i));
+        }
+        return res.toString();
     }
 }
