@@ -6,14 +6,20 @@ package com.example.yandex.demo.runners;
 public class LongestPalindromicSubstring {
 
     public static String longestPalindrome(String s) {
+        if (s.length() == 1) {
+            return s;
+        }
+
         String result = "";
         int max = 0;
         for (int i = 0; i < s.length(); i++) {
-            for (int j = i + 2; j < s.length(); j++) {
-                final String s4Check = s.substring(i, j);
+            for (int j = i; j < s.length(); j++) {
+                final String s4Check = s.substring(i, j + 1);
                 if (isPalyndrome(s4Check)) {
-                    result = s4Check;
-                    max = Math.max(max, s4Check.length());
+                    if (s4Check.length() > max) {
+                        max = s4Check.length();
+                        result = s4Check;
+                    }
                 }
             }
         }
@@ -37,6 +43,12 @@ public class LongestPalindromicSubstring {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("babad")); // bab
         System.out.println(longestPalindrome("cbbd")); // bb
+        System.out.println(longestPalindrome("a")); // a
+        System.out.println(longestPalindrome("abc")); // a
+        System.out.println(longestPalindrome("bb")); // a
+        System.out.println(longestPalindrome("asdasfafz")); // a
+        System.out.println(longestPalindrome("texet")); // a
+        System.out.println(longestPalindrome("")); // a
     }
 
 }
